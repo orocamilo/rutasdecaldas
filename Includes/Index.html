@@ -2,35 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="Styles/materialize.min.css">
+    <link rel="stylesheet" href="Styles/estilos.css">
+    <link rel="stylesheet" href="Styles/animate.css">
+    <link rel="preload" href="Images/backgrounds/rojo.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/azul.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/rosa.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/verde.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/naranja.jpg" as="image">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/materialize.min.js"></script>
     <script src="js/script.js"></script>
     <title></title>
 </head>
 <body>
-    <header id="header" class="row"></header>
-    <div id="contenedor" class="row">
+    <header id="header" class="row hide-on-med-and-down"></header>
+
+    <div id="body-mediano" class="hide-on-extra-large-only hide-on-large-only center-align"></div>
+
+    <div id="contenedor" class="row background-default contenedor hide-on-med-and-down" >
         <img id="logo" class="responsive-img"  src="Images/Logo%20San%20José%20en%20colores/amarillo.png" alt="">
-        <button id="btnNaranja"></button>
-        <button id="btnVerde"></button>
-        <button id="btnRojo"></button>
-        <button id="btnAzul"></button>
-        <button id="btnRosa"></button>
-        <div class="botones">
+        
+        <!-- botones e imagenes casas -->
+        <div>
+            <button id="btnVerde" class="manito modal-trigger" data-target="modal1"></button>
+            <img src="Images/boton-02.png" alt="" class="hide">
+        </div>
+        <div>
+            <button id="btnRojo" class="manito modal-trigger" data-target="modal1"></button>
+            <img src="Images/boton-04.png" alt="" class="hide">
+        </div>
+        <div>
+            <button id="btnAzul" class="manito modal-trigger" data-target="modal1"></button>
+            <img src="Images/boton-03.png" alt="" class="hide">
+        </div>
+        <div>
+            <button id="btnRosa" class="manito modal-trigger" data-target="modal1"></button>
+            <img src="Images/boton-05.png" alt="" class="hide">
+        </div>
+        <div>
+            <button id="btnNaranja" class="manito"></button>
+            <img src="Images/Elementos%20%20Qué%20proponemos/elemento-01.png" id="imgNaranja" class="imagen-naranja hide">
+            <img src="Images/boton-01.png" id="imgNaranja2" class="imagen-naranja hide">
+        </div>
+
+
+        <!-- botones redes sociales -->
+        <div id="botones" class="botones">
             <input type=image src="Images/Botones/Logos%20redes-01.png"  class="boton">
             <br>
             <input type=image src="Images/Botones/Logos%20redes-02.png" class="boton">
             <br>
             <input type=image src="Images/Botones/Logos%20redes-03.png" class="boton">
         </div>
+       
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal col m3 push-m4">
+            <div class="modal-content">
+                <img src="Images/Otros/boton-04.png" class="responsive-img" width="300" height="300">
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="modal-close waves-effect waves-green btn-flat">Aceptar</a>
+            </div>
+        </div>
+
+        <!-- Preloader -->
+        <div id="preloader" class="preloader-wrapper active" >
+            <div class="spinner-layer spinner-green-only">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+            </div>
+        </div>
+
 
     </div>
 
 
     <footer>
-        <div class="container">
+        <div class="container hide-on-med-and-down">
             <div class="row valign-wrapper">
                 <div class="col s2" >
                     <img class="responsive-img center-align" src="Images/Logos%20footer/udecaldas.png">
