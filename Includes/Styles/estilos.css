@@ -1,6 +1,6 @@
 #body-mediano{
-    height: 100vh;
-    width: 100%;
+    height: 90%;
+    width: 90%;
     background-image: url("../Images/Otros/under-construction-2891888_640.jpg");
     background-size:100% 100%;
     background-repeat: no-repeat;
@@ -12,7 +12,7 @@
     position: relative;
     top: 0px;
     left: 0px;
-    background-size: 100% 100%;
+    background-size: 100% 95%;
     background-position: center center;
     background-repeat: no-repeat;
     margin: 0;
@@ -23,24 +23,45 @@
     background-image:  url("../Images/backgrounds/background.jpg");
 }
 
+body{
+    background: #808080;
+}
+
 .background-naranja{
     background-image: url("../Images/backgrounds/naranja.jpg");
+}.background-naranja1{
+    background-image: url("../Images/backgrounds/naranja1.jpg");
 }
 
 .background-rojo{
     background-image: url("../Images/backgrounds/rojo.jpg");
 }
+.background-rojo1{
+    background-image: url("../Images/backgrounds/rojo1.jpg");
+}
 
 .background-rosa{
     background-image: url("../Images/backgrounds/rosa.jpg");
+    left:-1px;
+}
+
+.background-rosa1{
+    background-image: url("../Images/backgrounds/rosa1.jpg");
+    left:-1px;
 }
 
 .background-azul{
     background-image: url("../Images/backgrounds/azul.jpg");
 }
+.background-azul1{
+    background-image: url("../Images/backgrounds/azul1.jpg");
+}
 
 .background-verde{
     background-image: url("../Images/backgrounds/verde.jpg");
+}
+.background-verde1{
+    background-image: url("../Images/backgrounds/verde1.jpg");
 }
 
 
@@ -51,17 +72,19 @@
 }
 
 footer{
-    background-color: gray;
+    background-color: #808080;
     margin: 0;
     padding: 0;
     border: none;
+    position: relative;
+    float: bottom;
 }
 
 #header{
     position: relative;
     top: 0px;
     right: 3px;
-    background-color: gray;
+    background-color: #808080;
     height: 20px;
     width: 100%;
     margin: 0;
@@ -84,6 +107,7 @@ footer{
     height: 170px;
     top: 115px;
     left: 350px;
+    background: none;
 }
 
 #btnNaranja{
@@ -91,6 +115,7 @@ footer{
     height: 315px;
     top: 330px;
     left: 25px;
+    background: none;
 }
 
 #btnAzul{
@@ -98,6 +123,7 @@ footer{
     height: 240px;
     top: 345px;
     left: 635px;
+    background: none;
 }
 
 #btnVerde{
@@ -105,6 +131,7 @@ footer{
     height: 200px;
     top: 355px;
     left: 380px;
+    background: none;
 }
 
 #btnRosa{
@@ -112,24 +139,21 @@ footer{
     height: 100px;
     top: 340px;
     right: 105px;
+    background: none;
 }
 
 .boton-casas{
     position: absolute;
     padding: 0;
-    border: 1px solid #ffff00;
     background: none;
-}
-.imagen{
     border: none;
-    border-right: 0.5px solid hsla(279, 100%, 97%, 0.94);
-    height: 90%;
 }
 
 .botones{
     position: absolute;
     right: 0%;
     top: 37%;
+    border: none;
 }
 
 .boton{
@@ -142,15 +166,16 @@ footer{
 
 .manito:hover{
     cursor: pointer;
+    background: none;
 }
 
 
 #imgNaranja{
-    right: 0px;
-    width: 1232px;
-    height: 407px;
+    width: 90vw;
+    height: 28vw;
     position: absolute;
-    top: 247px;
+    top: 240px;
+    left: 118px;
 }
 
 #imgNaranja2{
@@ -158,7 +183,7 @@ footer{
     position: absolute;
     top: 330px;
     left: 120px;
-    border: 1px solid #76ff03;
+    border: none;
 }
 
 .once{
@@ -182,6 +207,5 @@ footer{
 @media #{$extra-large-and-up} {
 /* styles for extra large screens and up*/
 }
-
 
 

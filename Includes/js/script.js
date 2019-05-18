@@ -11,15 +11,15 @@ var btnNaranjaClick = function () {
     $('#imgNaranja').removeClass("hide");
     $('#logo').addClass("hide");
     $('#botones').addClass("hide");
-    $('#contenedor').removeClass('background-default');
-    $('#contenedor').addClass('background-naranja');
+    $('#contenedor').removeClass('background-naranja');
+    $('#contenedor').addClass('background-naranja1');
 };
 
 var btnNaranjaOver = function(){
     $('#contenedor').removeClass("background-default");
     $('#contenedor').addClass("background-naranja");
     $('#imgNaranja2').removeClass("hide");
-    //$('#imgNaranja2').addClass("animated once slideInLeft");
+    //$('#imgNaranja2').addClass("animated cnce slideInLeft");
     $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/rojo.png");
     $('#header').css("background-color", "rgb(213,157,60)");
 };
@@ -28,7 +28,7 @@ var btnNaranjaOut = function(){
 
     $('#contenedor').removeClass('background-naranja');
     $('#imgNaranja2').addClass('hide');
-   // $('#imgNaranja2').addClass("animated once slideOutLeft");
+    // $('#imgNaranja2').addClass("animated once slideOutLeft");
     valoresDefecto();
 };
 
@@ -44,6 +44,13 @@ var animationDone = function(){
     }
 };
 
+var btnRojoClick = function () {
+    $('#imgRojo').removeClass("hide");
+    $('#logo').addClass("hide");
+    $('#botones').addClass("hide");
+    $('#contenedor').removeClass('background-rojo');
+    $('#contenedor').addClass('background-rojo1');
+};
 var btnRojoOver = function(){
     $('#contenedor').removeClass("background-default");
     $('#contenedor').addClass("background-rojo");
@@ -94,9 +101,6 @@ var btnRosaOut = function(){
 };
 
 
-
-
-
 $(document).ready(function(){
     $('.modal').modal();
 
@@ -105,6 +109,7 @@ $(document).ready(function(){
     $('#btnNaranja').on("mouseover", btnNaranjaOver);
     $('#btnNaranja').on("mouseout", btnNaranjaOut);
 
+    $('#btnRojo').on("click",btnRojoClick);
     $('#btnRojo').on("mouseover", btnRojoOver);
     $('#btnRojo').on("mouseout", btnRojoOut);
 
