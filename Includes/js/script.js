@@ -1,5 +1,9 @@
 var mouseout = false;
 var mouseover = false;
+var btnClicked = false;
+var layerNaranjaClicked = false;
+var click = false;
+var numImg = 1;
 
 var valoresDefecto = function () {
     $('#contenedor').addClass("background-default");
@@ -8,11 +12,15 @@ var valoresDefecto = function () {
 };
 
 var btnNaranjaClick = function () {
-    $('#imgNaranja').removeClass("hide");
-    $('#logo').addClass("hide");
-    $('#botones').addClass("hide");
-    $('#contenedor').removeClass('background-naranja');
-    $('#contenedor').addClass('background-naranja1');
+    if(!btnClicked){
+        btnClicked = true;
+        $('#imgNaranja').removeClass("hide");
+        $('#lnkSgte').removeClass("hide");
+        $('#logo').addClass("hide");
+        $('#botones').addClass("hide");
+        $('#contenedor').removeClass('background-naranja');
+        $('#contenedor').addClass('background-naranja1');
+    }
 };
 
 var btnNaranjaOver = function(){
@@ -45,18 +53,23 @@ var animationDone = function(){
 };
 
 var btnRojoClick = function () {
-    $('#imgRojo').removeClass("hide");
-    $('#logo').addClass("hide");
-    $('#botones').addClass("hide");
-    $('#contenedor').removeClass('background-rojo');
-    $('#contenedor').addClass('background-rojo1');
+    if(!btnClicked){
+        btnClicked = true;
+        $('#imgRojo').removeClass("hide");
+        $('#logo').addClass("hide");
+        $('#botones').addClass("hide");
+        $('#contenedor').removeClass('background-rojo');
+        $('#contenedor').addClass('background-rojo1');
+    }
 };
 var btnRojoOver = function(){
-    $('#contenedor').removeClass("background-default");
-    $('#contenedor').addClass("background-rojo");
-    //document.getElementById("contenedor").style.backgroundImage = "url("+img.src+")";
-    $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/azul.png");
-    $('#header').css("background-color", "rgb(197, 69, 55)");
+    if(!btnClicked) {
+        $('#contenedor').removeClass("background-default");
+        $('#contenedor').addClass("background-rojo");
+        //document.getElementById("contenedor").style.backgroundImage = "url("+img.src+")";
+        $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/azul.png");
+        $('#header').css("background-color", "rgb(197, 69, 55)");
+    }
 };
 
 var btnRojoOut = function(){
@@ -65,10 +78,13 @@ var btnRojoOut = function(){
 };
 
 var btnVerdeOver = function(){
-    $('#contenedor').removeClass("background-default");
-    $('#contenedor').addClass("background-verde");
-    $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/naranja.png");
-    $('#header').css("background-color", "rgb(111, 159, 61)");
+    if(!btnClicked){
+        $('#contenedor').removeClass("background-default");
+        $('#contenedor').addClass("background-verde");
+        $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/naranja.png");
+        $('#header').css("background-color", "rgb(111, 159, 61)");
+    }
+
 };
 
 var btnVerdeOut = function(){
@@ -77,10 +93,12 @@ var btnVerdeOut = function(){
 };
 
 var btnAzulOver = function(){
-    $('#contenedor').removeClass("background-default");
-    $('#contenedor').addClass("background-azul");
-    $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/rosado.png");
-    $('#header').css("background-color", "rgb(51, 138, 192)");
+    if(!btnClicked){
+        $('#contenedor').removeClass("background-default");
+        $('#contenedor').addClass("background-azul");
+        $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/rosado.png");
+        $('#header').css("background-color", "rgb(51, 138, 192)");
+    }
 };
 
 var btnAzulOut = function(){
@@ -89,10 +107,12 @@ var btnAzulOut = function(){
 };
 
 var btnRosaOver = function(){
-    $('#contenedor').removeClass("background-default");
-    $('#contenedor').addClass("background-rosa");
-    $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/verde.png");
-    $('#header').css("background-color", "rgb(212, 132, 60)");
+    if(!btnClicked) {
+        $('#contenedor').removeClass("background-default");
+        $('#contenedor').addClass("background-rosa");
+        $('#logo').attr("src", "Images/Logo%20San%20José%20en%20colores/verde.png");
+        $('#header').css("background-color", "rgb(212, 132, 60)");
+    }
 };
 
 var btnRosaOut = function(){
@@ -100,7 +120,54 @@ var btnRosaOut = function(){
     valoresDefecto();
 };
 
+var lnkSgteClick = function(event){
+    event.preventDefault();
+    numImg++;
+    if(numImg > 4){
+        numImg = 1;
+    }
 
+    var textLink = "Siguiente><br>" + numImg + "/4";
+    if(numImg == 4){
+        textLink = "Vuelve a la página principal<br>" + numImg + "/4";
+    }
+
+    $('#imgNaranja').prop('src',"Images/Elementos%20%20Qué%20proponemos/elemento-0"+numImg+".png");
+    $('#lnkSgte').html(textLink);
+};
+
+var layerNaranjaClick = function(){
+    layerNaranjaClicked = true;
+};
+
+var contenedorClick = function(){
+    deshacer_click_btnNaranja();
+};
+
+var deshacer_click_btnNaranja = function(){
+    if(!layerNaranjaClicked){
+        btnClicked = false;
+        $('#contenedor').removeClass("background-naranja1");
+        $('#imgNaranja').addClass("hide");
+        $('#lnkSgte').addClass("hide");
+        $('#logo').removeClass("hide");
+        $('#botones').removeClass("hide");
+        valoresDefecto();
+    }
+    layerNaranjaClicked = false;
+};
+
+var btnFacebookClick = function(){
+    window.open("https://www.facebook.com");
+};
+
+var btnInstagramClick = function(){
+    window.open("https://www.instagram.com");
+};
+
+var btnYoutubeClick = function(){
+    window.open("https://www.youtube.com");
+};
 $(document).ready(function(){
     $('.modal').modal();
 
@@ -121,9 +188,17 @@ $(document).ready(function(){
 
     $('#btnRosa').on("mouseover", btnRosaOver);
     $('#btnRosa').on("mouseout", btnRosaOut);
-    
+
+    $('#contenedor').on("click",contenedorClick);
+
+    $('#layerNaranja').on("click", layerNaranjaClick);
+
+
+    $('#btnFacebook').on("click", btnFacebookClick);
+    $('#btnInstagram').on("click", btnInstagramClick);
+    $('#btnYoutube').on("click", btnYoutubeClick);
     //añadiendo animaciones
-    //$('#imgNaranja2').on("animationend", animationDone);
+//$('#imgNaranja2').on("animationend", animationDone);
 });
 
 $('#contenedor').ready(function () {

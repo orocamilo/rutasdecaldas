@@ -9,7 +9,7 @@
 .contenedor{
     height: 100vh;
     width: 100%;
-    position: relative;
+    position: absolute;
     top: 0px;
     left: 0px;
     background-size: 100% 95%;
@@ -18,18 +18,25 @@
     margin: 0;
 }
 
+#color-fondo{
+    background: gray;
+    position: relative;
+    top: 0px;
+    width: 98.75vw;
+    height: 100vh;
+}
+
 
 .background-default{
     background-image:  url("../Images/backgrounds/background.jpg");
 }
 
-body{
-    background: #808080;
-}
+
 
 .background-naranja{
     background-image: url("../Images/backgrounds/naranja.jpg");
-}.background-naranja1{
+}
+.background-naranja1{
     background-image: url("../Images/backgrounds/naranja1.jpg");
 }
 
@@ -98,55 +105,55 @@ footer{
     position: absolute;
     top: 15%;/* 115 px*/
     left: 5.5%;/* 75 px*/
-    width: 200px;/*200px*/
-    height: 200px;/*200px*/
+    width: 15vw;/*200px*/
+    height: 15vw;/*200px*/
 }
 
 #btnRojo{
-    width: 290px;
-    height: 170px;
-    top: 115px;
-    left: 350px;
+    width: 21vw;/*290 px*/
+    height: 20vh;/*170 px*/
+    top: 24vh;/*115 px*/
+    left: 25.5vw;/*350 px*/
     background: none;
 }
 
 #btnNaranja{
-    width: 145px;
-    height: 315px;
-    top: 330px;
-    left: 25px;
+    width: 11vw;/*145 px*/
+    height: 48vh;/*315 px*/
+    top: 50vh;/*330 px*/
+    left: 2vw;/*25 px*/
     background: none;
 }
 
 #btnAzul{
-    width: 255px;
-    height: 240px;
-    top: 345px;
-    left: 635px;
+    width: 19vw;/*255 px*/
+    height: 29vh;/*240 px*/
+    top: 54vh;/*245 px*/
+    left: 46vw;/*635 px*/
     background: none;
 }
 
 #btnVerde{
-    width: 230px;
-    height: 200px;
-    top: 355px;
-    left: 380px;
+    width: 17vw;/*230 px*/
+    height: 25vh;/*200 px*/
+    top: 53vh;/*355 px*/
+    left: 27vw;/*380 px*/
     background: none;
 }
 
 #btnRosa{
-    width: 230px;
-    height: 100px;
-    top: 340px;
-    right: 105px;
+    width: 17vw;/*230 px*/
+    height: 13vh;/*100 px*/
+    top: 52vh;/*340 px*/
+    right: 7.5vw;/*105 px*/
     background: none;
 }
 
 .boton-casas{
     position: absolute;
     padding: 0;
-    background: none;
     border: none;
+    /*border: 1px solid yellow;*/
 }
 
 .botones{
@@ -172,10 +179,10 @@ footer{
 
 #imgNaranja{
     width: 90vw;
-    height: 28vw;
+    height: 58vh;
     position: absolute;
-    top: 240px;
-    left: 118px;
+    bottom: 4vh;/*248 px*/
+    left: 8.625vw;/*118 px*/
 }
 
 #imgNaranja2{
@@ -186,26 +193,33 @@ footer{
     border: none;
 }
 
+#lnkSgte{
+    position: absolute;
+    top: 88vh;/*578 px*/
+    right: 2vw;/*25 px*/
+    color: black;
+    font-size: medium;
+    text-align: right;
+}
+#lnkSgte:hover{
+    text-decoration: underline;
+}
+
 .once{
     animation-duration: 3s;
     animation-delay: 500ms;
 }
 
-
-@media #{$small-and-down} {
-
-}
-@media #{$medium-and-up} {
-/*/ styles for medium screens and larger*/
-}
-@media #{$medium-and-down} {
-
-}
 @media #{$large-and-up} {
-/* styles for large screens and up*/
+    #imgNaranja{
+
+    }
 }
-@media #{$extra-large-and-up} {
-/* styles for extra large screens and up*/
+@media #{$large-and-down} {
+    #imgNaranja{
+        top: 65vh;
+    }
 }
+
 
 

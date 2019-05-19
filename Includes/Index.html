@@ -10,17 +10,21 @@
     <link rel="preload" href="Images/backgrounds/rosa.jpg" as="image">
     <link rel="preload" href="Images/backgrounds/verde.jpg" as="image">
     <link rel="preload" href="Images/backgrounds/naranja.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/azul1.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/rosa1.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/rojo1.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/verde1.jpg" as="image">
+    <link rel="preload" href="Images/backgrounds/naranja1.jpg" as="image">
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
     <script src="js/script.js"></script>
     <title></title>
 </head>
 <body>
-    <header id="header" class="row hide-on-med-and-down"></header>
+    <header id="header" class="row"></header>
+    <div id="color-fondo"></div>
 
-    <div id="body-mediano" class="hide-on-extra-large-only hide-on-large-only center-align"></div>
-
-    <div id="contenedor" class="row background-default contenedor hide-on-med-and-down" >
+    <div id="contenedor" class="row background-default contenedor" >
         <img id="logo" class="responsive-img"  src="Images/Logo%20San%20José%20en%20colores/amarillo.png" alt="">
         
         <!-- botones e imagenes casas -->
@@ -30,7 +34,6 @@
         </div>
         <div>
             <button id="btnRojo" class="manito  boton-casas" ></button>
-            <img src="Images/Elementos%20%20Qué%20proponemos/elemento-01.png" id="imgNaranja" class="imagen-naranja hide">
             <!--img src="Images/boton-04.png" alt="" class="hide"-->
         </div>
         <div>
@@ -41,20 +44,21 @@
             <button id="btnRosa" class="manito modal-trigger boton-casas" data-target="modal1"></button>
             <!--img src="Images/boton-05.png" alt="" class="hide"-->
         </div>
-        <div>
+        <div id="layerNaranja">
             <button id="btnNaranja" class="manito boton-casas"></button>
             <img src="Images/Elementos%20%20Qué%20proponemos/elemento-01.png" id="imgNaranja" class="imagen-naranja hide">
+            <a id="lnkSgte" onclick="lnkSgteClick(event)" class="hide manito">Siguiente><br>1/4</a>
             <!--img src="Images/boton-01.png" id="imgNaranja2" class="imagen-naranja hide"-->
         </div>
 
 
         <!-- botones redes sociales -->
         <div id="botones" class="botones">
-            <input type=image src="Images/Botones/Logos%20redes-01.png"  class="boton">
+            <input type=image src="Images/Botones/Logos%20redes-01.png" id="btnFacebook" class="boton">
             <br>
-            <input type=image src="Images/Botones/Logos%20redes-02.png" class="boton">
+            <input type=image src="Images/Botones/Logos%20redes-02.png" id="btnInstagram" class="boton">
             <br>
-            <input type=image src="Images/Botones/Logos%20redes-03.png" class="boton">
+            <input type=image src="Images/Botones/Logos%20redes-03.png" id="btnYoutube" class="boton">
         </div>
        
 
@@ -86,7 +90,7 @@
 
 
     <footer>
-        <div class="container hide-on-med-and-down">
+        <div class="container">
             <div class="row valign-wrapper">
                 <div class="col s2" >
                     <img class="responsive-img center-align" src="Images/Logos%20footer/udecaldas.png">
